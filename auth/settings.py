@@ -143,6 +143,9 @@ LOGIN_URL = 'login'
 #redirect link for log out
 LOGOUT_REDIRECT_URL = 'home'
 
+#admin username: superuser
+#password:123
+
 #the setup for smtp server to send password reset mail to gmail accounts
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
