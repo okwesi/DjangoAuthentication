@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2>
+ welcome
+ <! ---changes the username based on the authentication state--->
+ {% if user.is_authenticated %}
+ {{user.username}}
+ {% else %}
+ visitor
+ {% endif %}!
+</h2>
+
+<strong>Total users = {{no_of_users}} </strong>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--the login page-->
+      {% load crispy_forms_tags %}
+      {% load socialaccount %}
+      {% providers_media_js %}
+
+
+
+<h2>LOG IN </h2>
+<form method="post">
+  {% csrf_token %}
+<!--  unedited forms from django-->
+<!--  {{ form.as_p }}-->
+<!--  edited forms with crispy to make the form appealing-->
+    {{ form|crispy }}
+  <button type="submit"> login </button>
+  <a href="{% url 'password_reset' %}" >forgetten password?</a>
+<!--    login with google button -->
+  <button class="btn btn-success"><a href="{% provider_login_url 'google' %}" >Google</a></button>
+
+</form>
+
+
+
+{% endblock %}
